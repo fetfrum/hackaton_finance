@@ -1,4 +1,8 @@
-.App-header {
-  display: flex;
-  background: red;
+
+.Header {
+	min-height: 50px;
+
+}
+.h-icon {
+	margin-right: 10px;
 }

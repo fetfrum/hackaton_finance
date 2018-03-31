@@ -1,0 +1,10 @@
+.MainContent span {
+  display: flex;
+  background: lightgreen;
+}
+
+.Sum {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}

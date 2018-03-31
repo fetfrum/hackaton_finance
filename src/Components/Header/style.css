@@ -1,5 +1,4 @@
-.Header {
+.Header span {
   display: flex;
-  flex-wrap: nowrap;
   background: red;
 }

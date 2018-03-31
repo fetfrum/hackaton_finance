@@ -10,12 +10,14 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className="wrapper">
-        <LeftNav />
-        <div className="main">
-          <Header />
-          <Main>{/* <AddInput />
+      <div className="container">
+        <div className="row">
+          <LeftNav />
+          <div className="main col s9">
+            <Header />
+            <Main>{/* <AddInput />
           <MainContent /> */}</Main>
+          </div>
         </div>
       </div>
     );

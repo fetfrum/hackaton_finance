@@ -3,7 +3,7 @@ import './style.css';
 
 const Main = () => {
   return (
-    <div className="Main">
+    <div className="Main col s12">
       <span>MAIN</span>
     </div>
   );

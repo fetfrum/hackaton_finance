@@ -1,5 +1,4 @@
-.Main {
+.Main span {
   display: flex;
-  /* flex-basis: 85%; */
   background: lightblue;
 }

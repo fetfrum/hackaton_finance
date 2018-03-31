@@ -3,7 +3,7 @@ import './style.css';
 
 const LeftNav = () => {
   return (
-    <div className="LeftNav">
+    <div className="LeftNav col s3">
       <span>LEFT_NAV</span>
     </div>
   );

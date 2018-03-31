@@ -1,5 +1,4 @@
-.LeftNav {
+.LeftNav span {
   display: flex;
-  flex-basis: 15%;
   background: green;
 }

@@ -8,6 +8,10 @@ import AuthPage from '../pages/AuthPage';
 import BudgetPage from '../pages/BudgetPage';
 import LogoutPage from '../pages/LogoutPage';
 
+
+// Material
+import AppBar from 'material-ui/AppBar';
+
 class App extends Component {
   componentWillMount() {
     this.props.onCreateAuthObserver();
@@ -18,6 +22,13 @@ class App extends Component {
 
     return (
       <div>
+        
+   
+        <header>      { console.log(isAuthenticated) }<AppBar
+          title="Title"
+          iconElementLeft={<div>Текст</div>}
+          iconElementRight={isAuthenticated ? <div>Logged</div> : <div>Login</div>}
+        /></header>
         <Switch>
           <Route exact path="/" component={AuthPage} />
           <PrivateRoute

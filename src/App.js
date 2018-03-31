@@ -4,7 +4,8 @@ import React, { Component } from 'react';
 import Header from './Components/Header';
 import LeftNav from './Components/LeftNav';
 import Main from './Components/Main';
-
+import RegistrationForm from './Components/RegistrationForm';
+import AuthForm from './Components/AuthForm';
 import './App.css';
 
 class App extends Component {
@@ -17,6 +18,8 @@ class App extends Component {
             <Header />
             <Main>{/* <AddInput />
           <MainContent /> */}</Main>
+          <RegistrationForm />
+          <AuthForm />
           </div>
         </div>
       </div>

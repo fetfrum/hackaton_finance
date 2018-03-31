@@ -1,20 +1,25 @@
 import React from 'react';
+import wallet from '../../icons/icons-10.svg';
+import { Link } from 'react-router-dom';
+import PrivateRoute from '../../components/PrivateRoute';
+import withAuth from '../../hoc/withAuth';
 import './style.css';
 
-const Header = (prop100, prop1500) => {
+const Header = props => {
   return (
     <div className="Header blue darken-3">
-      
-    	<div className="row">
-    		<div className="col s6"></div>
-    	<div className="col s6">
-        	<div className="vallign wrapper right blue darken-3 right-align">
-        		<i className="h-icon material-icons blue darken-3 white-text">tv</i>
-        		<span className="blue darken-3 valign-wrapper white-text">{100 +" грн"}</span>
-        		<span className="blue darken-3 valign-wrapper white-text">{"/"+ 1500 +" грн"}</span>
-        	</div>
-      		</div>
-  		</div>
+      <Link className="logOut-link" to="/logout">
+        LogOut
+      </Link>
+      <div className="vallign wrapper right blue darken-3 right-align">
+        <img className="wallet" src={wallet} alt="wallet" />
+        <span className="blue darken-3 valign-wrapper white-text">
+          {100}грн./
+        </span>
+        <span className="blue darken-3 valign-wrapper white-text">
+          {1500}грн.
+        </span>
+      </div>
     </div>
   );
 };

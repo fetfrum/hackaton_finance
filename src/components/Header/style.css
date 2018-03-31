@@ -1,8 +1,18 @@
-
 .Header {
-	min-height: 50px;
-
+  display: flex;
+  justify-content: flex-end;
 }
 .h-icon {
-	margin-right: 10px;
+  margin-right: 10px;
+}
+
+.wallet {
+  width: 24px;
+  height: 24px;
+}
+
+.logOut-link {
+  display: flex;
+  justify-content: flex-end;
+  color: white;
 }

@@ -7,7 +7,7 @@ import AddInput from '../components/AddInput';
 import MainContent from '../components/MainContent';
 
 // TODO: Добавить стили
-const ownStyles = {};
+// const ownStyles = {};
 
 class BudgetPage extends Component {
   componentWillMount() {

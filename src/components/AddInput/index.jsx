@@ -7,11 +7,12 @@ const AddInput = props => {
   return (
     <div className="row AddInput">
       <img className="AddInput__Btn" src={plusBtn} alt="plusBtn" />
-      <input
+      <div>Добавить расходы</div>
+      {/* <input
         className="AddInput__input"
         type="text"
         placeholder="Добавить расходы"
-      />
+      /> */}
       <img className="AddInput__calIco" src={calImg} alt="cal" />
     </div>
   );

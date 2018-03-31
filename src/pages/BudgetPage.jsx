@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createNotesDbObserver } from '../actions';
 
-
-
+//Components
+import AddInput from '../components/AddInput';
+import MainContent from '../components/MainContent';
 
 // TODO: Добавить стили
-const ownStyles = {
-};
+const ownStyles = {};
 
 class BudgetPage extends Component {
   componentWillMount() {
@@ -16,9 +16,9 @@ class BudgetPage extends Component {
 
   render() {
     return (
-      <div style={ownStyles}>
-        <sidebar>menu</sidebar>
-        Страница бюджета
+      <div>
+        <AddInput />
+        <MainContent />
       </div>
     );
   }

@@ -8,9 +8,12 @@ import AuthPage from '../pages/AuthPage';
 import BudgetPage from '../pages/BudgetPage';
 import LogoutPage from '../pages/LogoutPage';
 
+//Components
+import Header from './Header';
+import LeftNav from './LeftNav';
+import Main from './Main';
 
-// Material
-import AppBar from 'material-ui/AppBar';
+import './App.css';
 
 class App extends Component {
   componentWillMount() {
@@ -22,29 +25,32 @@ class App extends Component {
 
     return (
       <div>
-        
-   
-        <header>      { console.log(isAuthenticated) }<AppBar
-          title="Title"
-          iconElementLeft={<div>Текст</div>}
-          iconElementRight={isAuthenticated ? <div>Logged</div> : <div>Login</div>}
-        /></header>
-        <Switch>
-          <Route exact path="/" component={AuthPage} />
-          <PrivateRoute
-            path="/logout"
-            component={LogoutPage}
-            isAuthenticated={isAuthenticated}
-            redirectTo="/"
-          />
-          <PrivateRoute
-            exact
-            path="/budget"
-            component={BudgetPage}
-            isAuthenticated={isAuthenticated}
-            redirectTo="/"
-          />
-        </Switch>
+        <div className="container">
+          <div className="row">
+            <LeftNav />
+            <div className="main col s9">
+              <Header />
+              <Main>
+                <Switch>
+                  <Route exact path="/" component={AuthPage} />
+                  <PrivateRoute
+                    path="/logout"
+                    component={LogoutPage}
+                    isAuthenticated={isAuthenticated}
+                    redirectTo="/"
+                  />
+                  <PrivateRoute
+                    exact
+                    path="/budget"
+                    component={BudgetPage}
+                    isAuthenticated={isAuthenticated}
+                    redirectTo="/"
+                  />
+                </Switch>
+              </Main>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

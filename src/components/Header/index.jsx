@@ -1,10 +1,10 @@
 import React from 'react';
-import './style.css';
+import '../Header/style.css';
 
 const Header = () => {
   return (
     <div className="Header col s12">
-      <span>HEADER</span>
+      <span className="App-header">HEADER</span>
     </div>
   );
 };

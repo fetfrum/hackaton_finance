@@ -4,10 +4,10 @@ import React, { Component } from 'react';
 import Header from './Components/Header';
 import LeftNav from './Components/LeftNav';
 import Main from './Components/Main';
-import RegistrationForm from './Components/RegistrationForm';
-import AuthForm from './Components/AuthForm';
-import AddExpencesForm from './Components/AddExpencesForm';
-import CreateBudget from './Components/CreateBudget';
+import RegistrationForm from './components/RegistrationForm';
+import AuthForm from './components/AuthForm';
+import AddExpencesForm from './components/AddExpencesForm';
+import CreateBudget from './components/CreateBudget';
 import './App.css';
 
 class App extends Component {
@@ -20,8 +20,8 @@ class App extends Component {
             <Header />
             <Main>{/* <AddInput />
           <MainContent /> */}</Main>
-          {/* <RegistrationForm /> */}
-          {/* <AuthForm /> */}
+          <RegistrationForm />
+          <AuthForm />
           <AddExpencesForm />
           <CreateBudget />
           </div>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './style.css';
 
 class LeftNav extends Component {
+  
   state = {
     isVisiblePeriod: false,
     isVisibleConsume: false,

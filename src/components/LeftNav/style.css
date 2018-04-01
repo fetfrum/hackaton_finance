@@ -6,12 +6,12 @@
 }
 
 .menu-items {
-  padding-top: 50px;
+  padding-top: 72px;
 }
 
 .menu-item {
   display: flex;
-  padding-top: 24px;
+  padding: 8px 24px 8px 8px;
   cursor: pointer;
 }
 
@@ -24,4 +24,5 @@
   font-size: 14px;
   margin-left: 16px;
   cursor: pointer;
+  padding: 4px 16px 4px 8px;
 }

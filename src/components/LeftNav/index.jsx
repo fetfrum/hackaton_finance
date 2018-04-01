@@ -43,7 +43,7 @@ class LeftNav extends Component {
             {this.state.isVisibleConsume && (
               <ul>
                 {сonsumes.map((сonsume, idx) => (
-                  <li className="period-item" key={сonsume[idx]}>
+                  <li className="period-item" key={сonsume}>
                     {сonsume}
                   </li>
                 ))}

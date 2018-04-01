@@ -12,7 +12,10 @@ import LogoutPage from '../pages/LogoutPage';
 import Header from './Header';
 import LeftNav from './LeftNav';
 import Main from './Main';
-
+// import RegistrationForm from './RegistrationForm';
+// import AuthForm from './AuthForm';
+// import AddExpencesForm from './AddExpencesForm';
+// import CreateBudget from './CreateBudget';
 import './App.css';
 
 class App extends Component {
@@ -22,7 +25,7 @@ class App extends Component {
 
   render() {
     const { isAuthenticated } = this.props;
-
+   
     return (
       <div>
         <div className="container">
@@ -48,6 +51,10 @@ class App extends Component {
                   />
                 </Switch>
               </Main>
+              {/* <RegistrationForm /> */}
+              {/* <AuthForm /> */}
+              {/* <AddExpencesForm /> */}
+              {/* <CreateBudget /> */}
             </div>
           </div>
         </div>

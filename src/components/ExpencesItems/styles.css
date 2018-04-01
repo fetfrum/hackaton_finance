@@ -1,0 +1,27 @@
+.ExpencesItems {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 8px;
+  }
+.ExpencesItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 8px;
+    font-size: 12px;
+    cursor: pointer;
+}
+.ExpencesItem__icon {
+    width: 64px;
+    height: 64px;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px grey;
+}
+.ExpencesItem__name {
+    padding: 4px;
+    color: gray;
+}
+.ExpencesItem__icon:hover {
+    background: lightblue;
+}

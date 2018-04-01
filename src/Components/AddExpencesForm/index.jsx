@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 //import classnames from 'classnames';
+import ExpencesItems from '../ExpencesItems';
 import styles from './styles.css';
 
-class RegistrationForm extends Component {
+class AddExpencesForm extends Component {
   state = {
     name: '',  
-    email: '',
-    password: '',
+    summ: '',
+    comment: '',
   };
 
   handleInputChange = evt => { 
@@ -17,58 +18,60 @@ class RegistrationForm extends Component {
   };
 
   handleCreateUser = evt => {
-    const { name, email, password } = this.state;
+    const { name, summ, comment } = this.state;
     evt.preventDefault();
-    this.props.onCreateUser(name, email, password);
+    this.props.onCreateUser(name, summ, comment);
   };
 
   render() {
-    const { name, email, password } = this.state;
+    const { name, summ, comment } = this.state;
 
     return (
-      <form className="RegistrationForm">
-       <p className="Heading">Регистрация</p>
-       <label htmlFor="Name" className="Label">
-        Name
+      <form className="AddExpencesForm">
+       <p className="Heading">Новые расходы</p>
         <input
           className={styles.input}
           type="text"
           value={name}
           onChange={this.handleInputChange}
-          placeholder="Stanislav"
+          placeholder="Название"
           required
           autoFocus
         />
-       </label>
-       <label htmlFor="Email" className="Label">
-        Email
         <input
           className={styles.input}
-          type="email"
-          value={email}
+          type="text"
+          value={summ}
           onChange={this.handleInputChange}
-          placeholder="stanislav.bereza@gmail.com"
+          placeholder="Сумма"
           required
           autoFocus
         />
-        </label>
-        <label htmlFor="Password" className="Label">
-         Password
+        {/* <div className="Icons"> */}
+          <ExpencesItems />
+        {/* </div> */}
          <input
-          className={styles.input}
-          type="password"
-          value={password}
+          className="datepicker"
+          type="text"
+          // value={date}
           onChange={this.handleInputChange}
-          placeholder=""
+          placeholder="Дата"
           required
          />
-         </label>
+         <input
+          className={styles.input}
+          type="text"
+          value={comment}
+          onChange={this.handleInputChange}
+          placeholder="Комментарий"
+          required
+         />
           <button className="waves-effect orange darken-1 btn" onClick={this.handleCreateUser}>
-            Sign Up
+            Сохранить
           </button>
       </form>
     );
   }
 }
 
-export default RegistrationForm;
+export default AddExpencesForm;

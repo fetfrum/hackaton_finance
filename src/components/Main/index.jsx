@@ -1,10 +1,13 @@
 import React from 'react';
+
+//Components
+
 import './style.css';
 
-const Main = () => {
+const Main = props => {
   return (
     <div className="Main col s12">
-      <span>MAIN</span>
+      <div>{props.children}</div>
     </div>
   );
 };

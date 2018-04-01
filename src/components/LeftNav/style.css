@@ -1,0 +1,27 @@
+.LeftNav {
+  display: flex;
+  flex-direction: column;
+  color: #585a68;
+  padding: 50px;
+}
+
+.menu-items {
+  padding-top: 50px;
+}
+
+.menu-item {
+  display: flex;
+  padding-top: 24px;
+  cursor: pointer;
+}
+
+.menu-item:hover,
+.period-item:hover {
+  background: #c0c5e2;
+}
+
+.period-item {
+  font-size: 14px;
+  margin-left: 16px;
+  cursor: pointer;
+}

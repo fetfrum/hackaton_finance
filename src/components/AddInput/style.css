@@ -1,0 +1,32 @@
+.AddInput {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0 48px 0 48px;
+}
+
+/* .AddInput__input {
+  display: flex;
+} */
+
+.AddInput__Btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: orange;
+  border: none;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+
+.AddInput__calIco {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}

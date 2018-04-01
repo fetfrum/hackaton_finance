@@ -22,9 +22,9 @@ class BudgetPage extends Component {
         <AddInput />
         <MainContent />
        {/* TODO: Перенести форму расходов в модальное окно, вызываемое по клику на плюсик */}
-        <div>
+        {/* <div>
           <AddCredit />
-        </div>
+        </div> */}
       </div>
     );
   }

@@ -42,7 +42,7 @@ class LeftNav extends Component {
           </li>
           <div>
             {this.state.isVisibleConsume && (
-              <ul>
+              <ul onClick={this.filter}>
                 {сonsumes.map((сonsume, idx) => (
                   <li className="period-item" key={сonsume}>
                     {сonsume}

@@ -19,17 +19,31 @@ import icon38 from '../../icons/icon-38.svg';
 import styles from './styles.css';
 
 class AddExpencesForm extends Component {
+constructor(props){
+  super(props)
+  this.state = {
+    startDate: moment(),
+    type: ''
+  }
+}
+
   // state = {
   //   name: '',  
   //   summ: '',
   //   date: '',
   //   comment: '',
   // };
+<<<<<<< HEAD
 state = {
   startDate: moment(),
   type: '',
   upDB: ''
 };
+=======
+// state = {
+  
+// };
+>>>>>>> stasbereza
 handleChange = this.handleChange.bind(this);
 type = this.type.bind(this);
 
@@ -62,28 +76,29 @@ onFormSubmit = (evt) => {
          .child(currentUserId)
          .push(credit)
          .catch(err => console.log(err));
-   this.props.updateDB("Gotcha");
+  this.form.reset();
+  this.props.close();
 }
 
-_handleShutForm = () => {
-  this.setState({
-    isVisibleAddExpForm: false
-  });
-};
+// _handleShutForm = () => {
+//   this.setState({
+//     isVisibleAddExpForm: false
+//   });
+// };
   // handleInputChange = evt => { 
   //   const value = evt.target.value;
   //   const type = evt.target.type;
   //   this.setState({ [type]: value });
   // };
 
-  render() {    
+  render() {
     const icons = ["icon-28", "icon-29", "icon-30", "icon-31", "icon-35", "icon-34", "icon-23", "icon-32", "icon-36", "icon-37", "icon-38"];
         
         const names = ["Здоровье", "Еда", "Гигиена", "Жилье", "Одежда", "Спорт", "Отдых", "Связь", "Транспорт", "Питомцы", "Подарки"];
         
         const images = icons.map((image, index) => {
            return (
-                <div className="ExpencesItem" onClick={this.type}>
+                <div className="ExpencesItem" onClick={this.type} key={names[index]}>
                     <img key={image} src={require(`../../icons/${image}.svg`)} className="ExpencesItem__icon" alt={ names[index] } />
                     <p className="ExpencesItem__name">{ names[index] }</p>
                 </div>
@@ -92,7 +107,9 @@ _handleShutForm = () => {
     //const { name, summ, date, comment } = this.state;
     const { isVisibleAddExpForm } = this.state;
     return (
-      <form className="AddExpencesForm"  onSubmit={this.onFormSubmit}>
+      <form className="AddExpencesForm"  onSubmit={this.onFormSubmit}
+      ref={node => (this.form = node)}
+      >
        <p className="Heading">Новые расходы</p>
         <input
           // className={styles.input}
@@ -141,7 +158,7 @@ _handleShutForm = () => {
           <button className="waves-effect orange darken-1 btn">
             Сохранить
           </button>
-          <button className="waves-effect orange darken-1 btn" onClick={this._handleShutForm}>
+          <button className="waves-effect orange darken-1 btn" onClick={this.props.close}>
             Отмена
           </button>
          </div>

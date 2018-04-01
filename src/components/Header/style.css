@@ -1,6 +1,7 @@
 .Header {
   display: flex;
   justify-content: flex-end;
+
   min-height: 80px;
 }
 .wallet {
@@ -9,6 +10,9 @@
   margin-right: 8px;
 }
 .logOut-link {
-  padding: 8px;
+  padding: 4px;
+  margin: 8px;
   color: white;
+  background: #fb8c00;
+  border-radius: 8px; 
 }

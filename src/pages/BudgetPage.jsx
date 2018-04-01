@@ -28,9 +28,18 @@ class BudgetPage extends Component {
   render() {
     return (
       <div>
+<<<<<<< HEAD
         <AddInput  updateDB={this.updateDB} />
         <MainContent creditsUpdate={this.state.text} />
   
+=======
+        <AddInput />
+        <MainContent />
+       {/* TODO: Перенести форму расходов в модальное окно, вызываемое по клику на плюсик */}
+        {/* <div>
+          <AddCredit />
+        </div> */}
+>>>>>>> stasbereza
       </div>
     );
   }

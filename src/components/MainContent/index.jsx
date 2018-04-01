@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { creditsDbRef, auth } from "../../firebase";
+import moment from 'moment';
 
 import "./style.css";
 
@@ -33,17 +34,21 @@ class MainContent extends Component {
       <table>
         <thead>
           <tr>
-            <th>Статья расхода</th>
-            <th>Дата</th>
+            <th>Наименование</th>
             <th>Сумма</th>
+            <th>Категория</th>
+            <th>Дата</th>
+            <th>Комментарий</th>
           </tr>
         </thead>
         <tbody>
         {element.map((key, index) => (
           <tr key={index}>
             <td>{index+1}. {key.creditName}</td>
-            <td>{key.creditType}</td>
             <td>{key.creditValue}</td>
+            <td>{key.creditType}</td>
+            <td>{moment.unix(key.creditDate).format('DD.MM.YYYY')}</td>
+            <td>{key.creditDescription}</td>
           </tr>
         ))}
         </tbody>

@@ -1,32 +1,24 @@
 .AddInput {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  position: relative;
-  padding: 0 48px 0 48px;
+  width: 240px;
+  padding: 24px 0;
+  font-size: 20px;
+  color: gray;
 }
-
-/* .AddInput__input {
-  display: flex;
-} */
 
 .AddInput__Btn {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: orange;
-  border: none;
-  color: white;
+  display: flex;
+  width: 48px;
+  height: 48px;
   cursor: pointer;
-  position: absolute;
-  top: 8px;
-  left: 8px;
 }
-
-.AddInput__calIco {
+/* .AddInput__calIco {
   width: 24px;
   height: 24px;
   cursor: pointer;
   position: absolute;
   top: 8px;
   right: 8px;
-}
+} */

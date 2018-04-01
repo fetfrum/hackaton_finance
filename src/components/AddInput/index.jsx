@@ -9,26 +9,30 @@ class AddInput extends Component {
     isVisibleAddExpForm: false
   } 
 
-  _handleToggleAddExpForm = () => {
+  _handleOpenAddExpForm = () => {
     this.setState(prevState => ({
       isVisibleAddExpForm: true,
     }));
   };
 
-
+  _handleCloseAddExpForm = () => {
+    this.setState(prevState => ({
+      isVisibleAddExpForm: false,
+    }));
+  };
 
   render() {
     return (
-      <div className="row AddInput">
-        <img className="AddInput__Btn" src={plusBtn} onClick={this._handleToggleAddExpForm} alt="plusBtn" />
-        {this.state.isVisibleAddExpForm && <AddExpencesForm updateDB={this.props.updateDB} />}
-        <div>Добавить расходы</div>
+      <div className="AddInput">
+        <img className="AddInput__Btn" src={plusBtn} onClick={this._handleOpenAddExpForm} alt="plusBtn" />
+        {this.state.isVisibleAddExpForm && <AddExpencesForm close={this._handleCloseAddExpForm} />}
+        <div className="AddInput__name">Добавить расходы</div>
         {/* <input
         className="AddInput__input"
         type="text"
         placeholder="Добавить расходы"
       /> */}
-        <img className="AddInput__calIco" src={calImg} alt="cal" />
+        {/* <img className="AddInput__calIco" src={calImg} alt="cal" /> */}
       </div>
     );
   }

@@ -4,42 +4,30 @@ import { creditsDbRef, auth } from "../../firebase";
 import "./style.css";
 
 class MainContent extends Component {
-  state = {
-    keys: {}
-  };
+  constructor(props){
+    super(props) 
+    this.state = {
+      keys: {},
+    }
+  }
   componentDidMount() {
     const currentUserId = auth.currentUser.uid;
     let creditName, creditType, creditValue;
-    creditsDbRef.child(currentUserId).once("value", snapshot => {
-      // snapshot.forEach(value=>{
-      //   creditsDbRef.child(currentUserId+'/'+value.key+'/creditName').once("value", (snapshot)=>{
-      //     creditName = snapshot.node_.value_;
-      //   });
-      //   creditsDbRef.child(currentUserId+'/'+value.key+'/creditType').once("value", (snapshot)=>{
-      //     creditType = snapshot.node_.value_;
-      //   });
-      //   creditsDbRef.child(currentUserId+'/'+value.key+'/creditValue').once("value", (snapshot)=>{
-      //     creditValue = snapshot.node_.value_;
-      //   });
-      //   keys.push( {
-      //     creditName,
-      //     creditType,
-      //     creditValue
-      //   });
-      // });
+    creditsDbRef.child(currentUserId).orderByKey().once("value", snapshot => {
       this.setState({ keys: snapshot.val() });
     });
+    creditsDbRef.child(currentUserId).orderByKey().limitToLast(1).on("child_added", snapshot => {
+      this.setState({ keys: snapshot.val() });
+    });
+
   }
 
+
   render() {
-    // this.state.keys.map((key,index)=>{
-    //   console.log(key.creditName)
-    // })
     const element = [];
     for (const key in this.state.keys) {
       element.push(this.state.keys[key]);
     }
-    console.log("render: ", element);
     return (
       // <div className="MainContent col s12">
       <table>

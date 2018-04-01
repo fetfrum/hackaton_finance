@@ -27,7 +27,8 @@ class AddExpencesForm extends Component {
   // };
 state = {
   startDate: moment(),
-  type: ''
+  type: '',
+  upDB: ''
 };
 handleChange = this.handleChange.bind(this);
 type = this.type.bind(this);
@@ -56,14 +57,12 @@ onFormSubmit = (evt) => {
        creditDate:       this.state.startDate.unix(), 
        creditDescription: this.creditDescription.value,
         }; //-
-        console.log(credit);
-        debugger;
        const currentUserId = auth.currentUser.uid;       
        creditsDbRef
          .child(currentUserId)
          .push(credit)
          .catch(err => console.log(err));
-  this.form.reset();
+   this.props.updateDB("Gotcha");
 }
 
 _handleShutForm = () => {

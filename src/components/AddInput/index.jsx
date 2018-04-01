@@ -15,11 +15,13 @@ class AddInput extends Component {
     }));
   };
 
+
+
   render() {
     return (
       <div className="row AddInput">
         <img className="AddInput__Btn" src={plusBtn} onClick={this._handleToggleAddExpForm} alt="plusBtn" />
-        {this.state.isVisibleAddExpForm && <AddExpencesForm />}
+        {this.state.isVisibleAddExpForm && <AddExpencesForm updateDB={this.props.updateDB} />}
         <div>Добавить расходы</div>
         {/* <input
         className="AddInput__input"

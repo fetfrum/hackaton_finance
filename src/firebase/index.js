@@ -16,4 +16,5 @@ export default firebase;
 const database = firebase.database().ref();
 export const usersDbRef = database.child('users');
 export const notesDbRef = database.child('notes');
+export const creditsDbRef = database.child('credits');
 export const auth = firebase.auth();

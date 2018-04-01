@@ -1,39 +1,68 @@
-import React from 'react';
-import './style.css';
+import React, { Component } from "react";
+import { creditsDbRef, auth } from "../../firebase";
 
-const MainContent = () => {
-  return (
-    <div className="MainContent col s12">
-      <table className="striped">
+import "./style.css";
+
+class MainContent extends Component {
+  state = {
+    keys: {}
+  };
+  componentDidMount() {
+    const currentUserId = auth.currentUser.uid;
+    let creditName, creditType, creditValue;
+    creditsDbRef.child(currentUserId).once("value", snapshot => {
+      // snapshot.forEach(value=>{
+      //   creditsDbRef.child(currentUserId+'/'+value.key+'/creditName').once("value", (snapshot)=>{
+      //     creditName = snapshot.node_.value_;
+      //   });
+      //   creditsDbRef.child(currentUserId+'/'+value.key+'/creditType').once("value", (snapshot)=>{
+      //     creditType = snapshot.node_.value_;
+      //   });
+      //   creditsDbRef.child(currentUserId+'/'+value.key+'/creditValue').once("value", (snapshot)=>{
+      //     creditValue = snapshot.node_.value_;
+      //   });
+      //   keys.push( {
+      //     creditName,
+      //     creditType,
+      //     creditValue
+      //   });
+      // });
+      this.setState({ keys: snapshot.val() });
+    });
+  }
+
+  render() {
+    // this.state.keys.map((key,index)=>{
+    //   console.log(key.creditName)
+    // })
+    const element = [];
+    for (const key in this.state.keys) {
+      element.push(this.state.keys[key]);
+    }
+    console.log("render: ", element);
+    return (
+      // <div className="MainContent col s12">
+      <table>
         <thead>
           <tr>
-            <th>Статья расходов</th>
+            <th>Статья расхода</th>
             <th>Дата</th>
-            <th className="right-align">Всего, грн. за ед-цу</th>
+            <th>Сумма</th>
           </tr>
         </thead>
-
         <tbody>
-          <tr>
-            <td>Alvin</td>
-            <td>Eclair</td>
-            <td className="right-align">{10}грн.</td>
+        {element.map((key, index) => (
+          <tr key={index}>
+            <td>{index+1}. {key.creditName}</td>
+            <td>{key.creditType}</td>
+            <td>{key.creditValue}</td>
           </tr>
-          <tr>
-            <td>Alan</td>
-            <td>Jellybean</td>
-            <td className="right-align">{10}грн.</td>
-          </tr>
-          <tr>
-            <td>Jonathan</td>
-            <td>Lollipop</td>
-            <td className="right-align">{10}грн.</td>
-          </tr>
+        ))}
         </tbody>
       </table>
-      <div className="Sum">Итого: {100}грн.</div>
-    </div>
-  );
-};
+
+    );
+  }
+}
 
 export default MainContent;

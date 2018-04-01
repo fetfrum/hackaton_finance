@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
-import notesReducer from './notes';
+import creditsReducer from './credits';
 import authReducer from './auth';
 
 const rootReducer = combineReducers({
-  notes: notesReducer,
+  credits: creditsReducer,
   auth: authReducer,
   routing: routerReducer,
 });

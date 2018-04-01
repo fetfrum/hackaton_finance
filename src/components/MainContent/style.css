@@ -8,3 +8,7 @@
   justify-content: flex-end;
   margin-top: 24px;
 }
+.lists{
+  display: flex;
+  justify-content: space-between; 
+}

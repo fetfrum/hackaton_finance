@@ -1,8 +1,6 @@
 import React from 'react';
 import wallet from '../../icons/icons-10.svg';
 import { Link } from 'react-router-dom';
-import PrivateRoute from '../../components/PrivateRoute';
-import withAuth from '../../hoc/withAuth';
 import './style.css';
 
 const Header = props => {

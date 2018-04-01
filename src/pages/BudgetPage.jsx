@@ -9,7 +9,7 @@ import AddCredit from '../components/AddCredit';
 import CreditList from '../components/CreditsList'
 
 // TODO: Добавить стили
-const ownStyles = {};
+// const ownStyles = {};
 
 class BudgetPage extends Component {
   componentWillMount() {

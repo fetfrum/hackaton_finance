@@ -1,16 +1,28 @@
 .LeftNav {
   display: flex;
   flex-direction: column;
-  /* background: #c0c5e2; */
   color: #585a68;
   padding: 50px;
-  height: 100%;
 }
 
 .menu-items {
-  padding-top: 50px;
+  padding-top: 72px;
 }
 
 .menu-item {
-  padding-top: 24px;
+  display: flex;
+  padding: 8px 24px 8px 8px;
+  cursor: pointer;
+}
+
+.menu-item:hover,
+.period-item:hover {
+  background: #c0c5e2;
+}
+
+.period-item {
+  font-size: 14px;
+  margin-left: 16px;
+  cursor: pointer;
+  padding: 4px 16px 4px 8px;
 }

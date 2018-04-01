@@ -15,7 +15,7 @@ const AddCredit = () => {
         const credit ={creditName: creditName.value,
          creditValue: creditValue.value,
          creditType: creditType.value};
-         console.log (credit);
+      //    console.log (credit);
          const currentUserId = auth.currentUser.uid;       
          creditsDbRef
            .child(currentUserId)
